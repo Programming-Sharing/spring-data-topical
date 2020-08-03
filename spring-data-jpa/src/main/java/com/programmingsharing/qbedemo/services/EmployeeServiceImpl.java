@@ -8,8 +8,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -17,13 +15,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
     @Override
-    public List<Employees> getEmployeesByExample(EmployeeSearchDto employeeSearchDto){
+    public Iterable<Employees> getEmployeesByExample(EmployeeSearchDto employeeSearchDto) {
         Employees employeesAsProbe = new Employees();
         employeesAsProbe.setGender(employeeSearchDto.getGender());
         employeesAsProbe.setLastName(employeeSearchDto.getLastName());
         employeesAsProbe.setFirstName(employeeSearchDto.getFirstName());
-//        employeesAsProbe.setBirthDate(defaultIfnew java.sql.Date(employeeSearchDto.getDob().getTime()));
-//        employeesAsProbe.setHireDate(new java.sql.Date(employeeSearchDto.getHireDate().getTime()));
+
+        if (employeeSearchDto.getDob() != null) {
+            employeesAsProbe.setBirthDate(new java.sql.Date(employeeSearchDto.getDob().getTime()));
+        }
+        if (employeeSearchDto.getHireDate() != null) {
+            employeesAsProbe.setHireDate(new java.sql.Date(employeeSearchDto.getHireDate().getTime()));
+        }
 
 
         ExampleMatcher employeeMatcher = ExampleMatcher.matchingAll().withIgnoreCase("lastName", "firstName")

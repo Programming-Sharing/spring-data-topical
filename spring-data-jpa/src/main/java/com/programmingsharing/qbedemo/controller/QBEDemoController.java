@@ -5,8 +5,6 @@ import com.programmingsharing.qbedemo.entities.Employees;
 import com.programmingsharing.qbedemo.services.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value = "employee")
 public class QBEDemoController {
@@ -19,9 +17,7 @@ public class QBEDemoController {
 
     @PostMapping("/search")
     @ResponseBody
-    public List<Employees> index(@RequestBody EmployeeSearchDto employeeSearchDto){
+    public Iterable<Employees> search(@RequestBody EmployeeSearchDto employeeSearchDto){
         return employeeService.getEmployeesByExample(employeeSearchDto);
     }
-
-
 }
