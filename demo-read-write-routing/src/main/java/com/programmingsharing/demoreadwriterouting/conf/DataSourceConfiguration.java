@@ -39,6 +39,9 @@ public class DataSourceConfiguration {
         targetDataSources.put(DatabaseEnvironment.UPDATABLE, masterDataSource());
         targetDataSources.put(DatabaseEnvironment.READONLY, slaveDataSource());
         masterSlaveRoutingDataSource.setTargetDataSources(targetDataSources);
+
+        // Set as all transaction point to master
+        masterSlaveRoutingDataSource.setDefaultTargetDataSource(masterDataSource());
         return masterSlaveRoutingDataSource;
     }
 

@@ -1,4 +1,4 @@
-package com.programmingsharing.demoreadwriterouting.repository.updatable;
+package com.programmingsharing.demoreadwriterouting.repository;
 
 import com.programmingsharing.demoreadwriterouting.entities.Product;
 import org.springframework.data.repository.CrudRepository;

@@ -2,7 +2,7 @@ package com.programmingsharing.demoreadwriterouting.service;
 
 import com.programmingsharing.demoreadwriterouting.entities.Product;
 import com.programmingsharing.demoreadwriterouting.model.CreateProductModel;
-import com.programmingsharing.demoreadwriterouting.repository.updatable.ProductRepository;
+import com.programmingsharing.demoreadwriterouting.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
