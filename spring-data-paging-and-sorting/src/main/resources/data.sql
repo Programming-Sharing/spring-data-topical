@@ -1,3 +1,12 @@
+drop table user if exists;
+create table User (
+	id INT,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	email VARCHAR(50),
+	gender VARCHAR(50)
+);
+
 insert into User (id, first_name, last_name, email, gender) values (1, 'Kerwin', 'Atwill', 'katwill0@liveinternet.ru', 'Male');
 insert into User (id, first_name, last_name, email, gender) values (2, 'Matthus', 'Ilden', 'milden1@phpbb.com', 'Male');
 insert into User (id, first_name, last_name, email, gender) values (3, 'Nelle', 'Bettis', 'nbettis2@irs.gov', 'Female');
