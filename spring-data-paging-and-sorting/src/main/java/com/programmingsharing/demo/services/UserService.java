@@ -8,6 +8,6 @@ public interface UserService {
 
 	List<User> findAllUserByLastNameSortByLastNameDesc(String lastName);
 
-	List<User> findAllUserSortByLastNameDesc();
+	List<User> findAllUserPageble();
 
 }

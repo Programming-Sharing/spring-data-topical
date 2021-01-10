@@ -22,7 +22,7 @@ public class SpringDataPagingAndSortingApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		userService.findAllUserSortByLastNameDesc().forEach(user -> System.out.println(user.getLastName()));
+		userService.findAllUserPageble().forEach(System.out::println);
 		
 	}
 
